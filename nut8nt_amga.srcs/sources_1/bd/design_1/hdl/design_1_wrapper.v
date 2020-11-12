@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed Mar 11 13:22:54 2020
-//Host        : DESKTOP-L1MNMGJ running 64-bit major release  (build 9200)
+//Date        : Thu Oct 22 13:31:34 2020
+//Host        : DESKTOP-UD6FJRU running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -11,25 +11,25 @@
 
 module design_1_wrapper
    (GND,
-    M_AXI_STATREG_araddr,
-    M_AXI_STATREG_arprot,
-    M_AXI_STATREG_arready,
-    M_AXI_STATREG_arvalid,
-    M_AXI_STATREG_awaddr,
-    M_AXI_STATREG_awprot,
-    M_AXI_STATREG_awready,
-    M_AXI_STATREG_awvalid,
-    M_AXI_STATREG_bready,
-    M_AXI_STATREG_bresp,
-    M_AXI_STATREG_bvalid,
-    M_AXI_STATREG_rdata,
-    M_AXI_STATREG_rready,
-    M_AXI_STATREG_rresp,
-    M_AXI_STATREG_rvalid,
-    M_AXI_STATREG_wdata,
-    M_AXI_STATREG_wready,
-    M_AXI_STATREG_wstrb,
-    M_AXI_STATREG_wvalid,
+    M_AXI_status_araddr,
+    M_AXI_status_arprot,
+    M_AXI_status_arready,
+    M_AXI_status_arvalid,
+    M_AXI_status_awaddr,
+    M_AXI_status_awprot,
+    M_AXI_status_awready,
+    M_AXI_status_awvalid,
+    M_AXI_status_bready,
+    M_AXI_status_bresp,
+    M_AXI_status_bvalid,
+    M_AXI_status_rdata,
+    M_AXI_status_rready,
+    M_AXI_status_rresp,
+    M_AXI_status_rvalid,
+    M_AXI_status_wdata,
+    M_AXI_status_wready,
+    M_AXI_status_wstrb,
+    M_AXI_status_wvalid,
     VCC,
     clk_dma,
     emio_gpio_i_0,
@@ -50,29 +50,30 @@ module design_1_wrapper
     spi1_mo,
     spi1_sclk,
     spi1_ss0,
-    spi1_ss1);
+    spi1_ss1,
+    spi1_ss2);
   input GND;
-  output [39:0]M_AXI_STATREG_araddr;
-  output [2:0]M_AXI_STATREG_arprot;
-  input [0:0]M_AXI_STATREG_arready;
-  output [0:0]M_AXI_STATREG_arvalid;
-  output [39:0]M_AXI_STATREG_awaddr;
-  output [2:0]M_AXI_STATREG_awprot;
-  input [0:0]M_AXI_STATREG_awready;
-  output [0:0]M_AXI_STATREG_awvalid;
-  output [0:0]M_AXI_STATREG_bready;
-  input [1:0]M_AXI_STATREG_bresp;
-  input [0:0]M_AXI_STATREG_bvalid;
-  input [31:0]M_AXI_STATREG_rdata;
-  output [0:0]M_AXI_STATREG_rready;
-  input [1:0]M_AXI_STATREG_rresp;
-  input [0:0]M_AXI_STATREG_rvalid;
-  output [31:0]M_AXI_STATREG_wdata;
-  input [0:0]M_AXI_STATREG_wready;
-  output [3:0]M_AXI_STATREG_wstrb;
-  output [0:0]M_AXI_STATREG_wvalid;
+  output [39:0]M_AXI_status_araddr;
+  output [2:0]M_AXI_status_arprot;
+  input [0:0]M_AXI_status_arready;
+  output [0:0]M_AXI_status_arvalid;
+  output [39:0]M_AXI_status_awaddr;
+  output [2:0]M_AXI_status_awprot;
+  input [0:0]M_AXI_status_awready;
+  output [0:0]M_AXI_status_awvalid;
+  output [0:0]M_AXI_status_bready;
+  input [1:0]M_AXI_status_bresp;
+  input [0:0]M_AXI_status_bvalid;
+  input [31:0]M_AXI_status_rdata;
+  output [0:0]M_AXI_status_rready;
+  input [1:0]M_AXI_status_rresp;
+  input [0:0]M_AXI_status_rvalid;
+  output [31:0]M_AXI_status_wdata;
+  input [0:0]M_AXI_status_wready;
+  output [3:0]M_AXI_status_wstrb;
+  output [0:0]M_AXI_status_wvalid;
   input VCC;
-  input clk_dma;
+  output clk_dma;
   input [93:0]emio_gpio_i_0;
   output [93:0]emio_gpio_o_0;
   output [0:0]rst_sys;
@@ -92,27 +93,28 @@ module design_1_wrapper
   output spi1_sclk;
   output spi1_ss0;
   output spi1_ss1;
+  output spi1_ss2;
 
   wire GND;
-  wire [39:0]M_AXI_STATREG_araddr;
-  wire [2:0]M_AXI_STATREG_arprot;
-  wire [0:0]M_AXI_STATREG_arready;
-  wire [0:0]M_AXI_STATREG_arvalid;
-  wire [39:0]M_AXI_STATREG_awaddr;
-  wire [2:0]M_AXI_STATREG_awprot;
-  wire [0:0]M_AXI_STATREG_awready;
-  wire [0:0]M_AXI_STATREG_awvalid;
-  wire [0:0]M_AXI_STATREG_bready;
-  wire [1:0]M_AXI_STATREG_bresp;
-  wire [0:0]M_AXI_STATREG_bvalid;
-  wire [31:0]M_AXI_STATREG_rdata;
-  wire [0:0]M_AXI_STATREG_rready;
-  wire [1:0]M_AXI_STATREG_rresp;
-  wire [0:0]M_AXI_STATREG_rvalid;
-  wire [31:0]M_AXI_STATREG_wdata;
-  wire [0:0]M_AXI_STATREG_wready;
-  wire [3:0]M_AXI_STATREG_wstrb;
-  wire [0:0]M_AXI_STATREG_wvalid;
+  wire [39:0]M_AXI_status_araddr;
+  wire [2:0]M_AXI_status_arprot;
+  wire [0:0]M_AXI_status_arready;
+  wire [0:0]M_AXI_status_arvalid;
+  wire [39:0]M_AXI_status_awaddr;
+  wire [2:0]M_AXI_status_awprot;
+  wire [0:0]M_AXI_status_awready;
+  wire [0:0]M_AXI_status_awvalid;
+  wire [0:0]M_AXI_status_bready;
+  wire [1:0]M_AXI_status_bresp;
+  wire [0:0]M_AXI_status_bvalid;
+  wire [31:0]M_AXI_status_rdata;
+  wire [0:0]M_AXI_status_rready;
+  wire [1:0]M_AXI_status_rresp;
+  wire [0:0]M_AXI_status_rvalid;
+  wire [31:0]M_AXI_status_wdata;
+  wire [0:0]M_AXI_status_wready;
+  wire [3:0]M_AXI_status_wstrb;
+  wire [0:0]M_AXI_status_wvalid;
   wire VCC;
   wire clk_dma;
   wire [93:0]emio_gpio_i_0;
@@ -134,28 +136,29 @@ module design_1_wrapper
   wire spi1_sclk;
   wire spi1_ss0;
   wire spi1_ss1;
+  wire spi1_ss2;
 
   design_1 design_1_i
        (.GND(GND),
-        .M_AXI_STATREG_araddr(M_AXI_STATREG_araddr),
-        .M_AXI_STATREG_arprot(M_AXI_STATREG_arprot),
-        .M_AXI_STATREG_arready(M_AXI_STATREG_arready),
-        .M_AXI_STATREG_arvalid(M_AXI_STATREG_arvalid),
-        .M_AXI_STATREG_awaddr(M_AXI_STATREG_awaddr),
-        .M_AXI_STATREG_awprot(M_AXI_STATREG_awprot),
-        .M_AXI_STATREG_awready(M_AXI_STATREG_awready),
-        .M_AXI_STATREG_awvalid(M_AXI_STATREG_awvalid),
-        .M_AXI_STATREG_bready(M_AXI_STATREG_bready),
-        .M_AXI_STATREG_bresp(M_AXI_STATREG_bresp),
-        .M_AXI_STATREG_bvalid(M_AXI_STATREG_bvalid),
-        .M_AXI_STATREG_rdata(M_AXI_STATREG_rdata),
-        .M_AXI_STATREG_rready(M_AXI_STATREG_rready),
-        .M_AXI_STATREG_rresp(M_AXI_STATREG_rresp),
-        .M_AXI_STATREG_rvalid(M_AXI_STATREG_rvalid),
-        .M_AXI_STATREG_wdata(M_AXI_STATREG_wdata),
-        .M_AXI_STATREG_wready(M_AXI_STATREG_wready),
-        .M_AXI_STATREG_wstrb(M_AXI_STATREG_wstrb),
-        .M_AXI_STATREG_wvalid(M_AXI_STATREG_wvalid),
+        .M_AXI_status_araddr(M_AXI_status_araddr),
+        .M_AXI_status_arprot(M_AXI_status_arprot),
+        .M_AXI_status_arready(M_AXI_status_arready),
+        .M_AXI_status_arvalid(M_AXI_status_arvalid),
+        .M_AXI_status_awaddr(M_AXI_status_awaddr),
+        .M_AXI_status_awprot(M_AXI_status_awprot),
+        .M_AXI_status_awready(M_AXI_status_awready),
+        .M_AXI_status_awvalid(M_AXI_status_awvalid),
+        .M_AXI_status_bready(M_AXI_status_bready),
+        .M_AXI_status_bresp(M_AXI_status_bresp),
+        .M_AXI_status_bvalid(M_AXI_status_bvalid),
+        .M_AXI_status_rdata(M_AXI_status_rdata),
+        .M_AXI_status_rready(M_AXI_status_rready),
+        .M_AXI_status_rresp(M_AXI_status_rresp),
+        .M_AXI_status_rvalid(M_AXI_status_rvalid),
+        .M_AXI_status_wdata(M_AXI_status_wdata),
+        .M_AXI_status_wready(M_AXI_status_wready),
+        .M_AXI_status_wstrb(M_AXI_status_wstrb),
+        .M_AXI_status_wvalid(M_AXI_status_wvalid),
         .VCC(VCC),
         .clk_dma(clk_dma),
         .emio_gpio_i_0(emio_gpio_i_0),
@@ -176,5 +179,6 @@ module design_1_wrapper
         .spi1_mo(spi1_mo),
         .spi1_sclk(spi1_sclk),
         .spi1_ss0(spi1_ss0),
-        .spi1_ss1(spi1_ss1));
+        .spi1_ss1(spi1_ss1),
+        .spi1_ss2(spi1_ss2));
 endmodule
