@@ -26,7 +26,9 @@ module ads5292_interface #
 (   parameter WIRE_NUM     = 2, // A and B channel
     parameter CH_NUM       = 8,
     parameter DESER_FACTOR = 8,
-    parameter ADS_DW   = 16
+    parameter ADS_DW   = 16,
+    parameter USE_CHANNESL = 1,
+    parameter SAMPL_SIZE = (8 * 2 * 2) // bit * sizeof(short) * 2 (I + Q)
     )
 (
 
@@ -47,11 +49,9 @@ module ads5292_interface #
     input rst_sys,
     output m_axis_tvalid,
     input m_axis_tready,
-`ifdef USE_4_CHANNELS
-    output [127:0]m_axis_tdata,
-`else
-    output [255:0]m_axis_tdata,
-`endif
+
+    output [USE_CHANNESL*SAMPL_SIZE - 1:0]m_axis_tdata,
+
     output m_axis_tlast,
     output m_axis_tstrb,
     output [3:0]m_axis_tkeep,
@@ -422,53 +422,6 @@ always @(posedge clk_ser)
         assign data_aligned_packed[ch_ind] = {data_aligned[ch_ind+8],data_aligned[ch_ind]};
     end
     
-    // DATA FROM ALIGNERS
-    /*
-    ila_data_test ila_data_income_inst (
-	.clk(clk_ser), // input wire clk
-
-	.probe0(data_aligned_packed[0]), // input wire [15:0]  probe0  
-	.probe1(data_aligned_packed[1]), // input wire [15:0]  probe1 	
-	.probe2(data_aligned_packed[2]), // input wire [15:0]  probe2 
-	.probe3(data_aligned_packed[3]), // input wire [15:0]  probe3 
-	.probe4(data_aligned_packed[4]), // input wire [15:0]  probe4 
-	.probe5(data_aligned_packed[5]), // input wire [15:0]  probe5 
-	.probe6(data_aligned_packed[6]), // input wire [15:0]  probe6 
-	.probe7(data_aligned_packed[7]), // input wire [15:0]  probe7  
-	.probe8(synced), // input wire [0:0]  probe8
-	.probe9(pll0_locked_s) // input wire [0:0]  probe8
-    );*/
-    
-    // NOT ALIGNED RAW DATA
-    /*
-    ila_0 ila_raw_data_inst (
-	.clk(clk_ser), // input wire clk
-
-	.probe0(data_to_fabric[0]), // input wire [7:0]  probe0  
-	.probe1(data_to_fabric[1]), // input wire [7:0]  probe1 
-	.probe2(data_to_fabric[2]), // input wire [7:0]  probe2 
-	.probe3(data_to_fabric[3]), // input wire [7:0]  probe3 
-	.probe4(data_to_fabric[4]), // input wire [7:0]  probe4 
-	.probe5(data_to_fabric[5]), // input wire [7:0]  probe5 
-	.probe6(data_to_fabric[6]), // input wire [7:0]  probe6 
-	.probe7(data_to_fabric[7]), // input wire [7:0]  probe7 
-	.probe8(data_to_fabric[8]), // input wire [7:0]  probe8 
-	.probe9(data_to_fabric[9]), // input wire [7:0]  probe9 
-	.probe10(data_to_fabric[10]), // input wire [7:0]  probe10 
-	.probe11(data_to_fabric[11]), // input wire [7:0]  probe11 
-	.probe12(data_to_fabric[12]), // input wire [7:0]  probe12 
-	.probe13(data_to_fabric[13]), // input wire [7:0]  probe13 
-	.probe14(data_to_fabric[14]), // input wire [7:0]  probe14 
-	.probe15(data_to_fabric[15]), // input wire [7:0]  probe15
-	.probe16(enc_patt[0]), // input wire [2:0]  probe16 
-	.probe17(enc_patt[1]), // input wire [2:0]  probe17 
-	.probe18(enc_patt[2]), // input wire [2:0]  probe18 
-	.probe19(enc_patt[3]), // input wire [2:0]  probe19 
-	.probe20(enc_patt[4]), // input wire [2:0]  probe20 
-	.probe21(enc_patt[5]), // input wire [2:0]  probe21 
-	.probe22(enc_patt[6]), // input wire [2:0]  probe22 
-	.probe23(enc_patt[7]) // input wire [2:0]  probe23
-);*/
 
     integer ch_index;
     genvar ch_index_d;
@@ -589,7 +542,8 @@ always @(posedge clk_ser)
     //assign data_to_fifo = {counter, counter, counter, counter};
     //assign data_to_fifo = {data_to_fifo_ff[127:32], counter};
     //assign data_to_fifo = data_to_fifo_ff;
-    assign data_to_fifo = {data_from_fir[7][20:5], data_from_fir[6][20:5], data_from_fir[5][20:5], data_from_fir[4][20:5], data_from_fir[3][20:5], data_from_fir[2][20:5], data_from_fir[1][20:5], data_from_fir[0][20:5]};
+    //assign data_to_fifo = {data_from_fir[7][20:5], data_from_fir[6][20:5], data_from_fir[5][20:5], data_from_fir[4][20:5], data_from_fir[3][20:5], data_from_fir[2][20:5], data_from_fir[1][20:5], data_from_fir[0][20:5]};
+    assign data_to_fifo = {data_from_fir[7][20:5], data_from_fir[6][20:5], data_from_fir[5][20:5], data_from_fir[4][20:5], counter, data_from_fir[1][20:5], data_from_fir[0][20:5]};
 `else
     assign data_to_fifo = {counter, counter, counter, counter, counter, counter, counter, counter};
 `endif
@@ -733,18 +687,6 @@ begin
                   end
                   
                   
-//                  //stop inseption
-//                  if (framer_tlast == 16'h0020) begin
-//                    if (cnt_tic == 16'h0070) begin
-//                        mux_tready <= 0;
-//                        mux_tvalid <= 0;
-//                    end else if (cnt_tic == 16'h0075) begin
-//                        mux_tready <= 1;
-//                        mux_tvalid <= 1;
-//                    end
-//                  end
-//                  cnt_tic <= cnt_tic +1;
-                  
                end
                
       // WAITING FOR FULL FIFO
@@ -770,17 +712,15 @@ assign m_axis_tready_i = mux_tready ? m_axis_tready : 1'b0;
 assign m_axis_tvalid = mux_tvalid ? m_axis_tvalid_o : 1'b0;
     
     
-   
-
-
-
-
 assign  fifo_empty = 0;
 assign  fifo_full = 0;
 
     
 // -------------- FIFO INPUT DATA BANK --------------
 wire [31:0] axis_rd_data_coun;
+wire [127 : 0] m_axis_tdata_128;
+
+assign m_axis_tdata = m_axis_tdata_128[USE_CHANNESL*SAMPL_SIZE - 1:0];
 
 // fifo for small packet mode  
 wire clk_fir;
@@ -800,7 +740,7 @@ axis_data_fifo_0 fifo_adc_data (
   
   .m_axis_tvalid(m_axis_tvalid_o),    // output wire m_axis_tvalid
   .m_axis_tready(m_axis_tready_i),    // input wire m_axis_tready
-  .m_axis_tdata(m_axis_tdata),      // output wire [127 : 0] m_axis_tdata
+  .m_axis_tdata(m_axis_tdata_128),      // output wire [127 : 0] m_axis_tdata
   .m_axis_tlast(fifo_m_tlast),
   //.m_axis_tlast(m_axis_tlast),
   //.almost_empty(fifo_empty),      // output wire almost_empty
@@ -809,97 +749,20 @@ axis_data_fifo_0 fifo_adc_data (
   .prog_full(axis_prog_full)            // output wire prog_full
 );
 
-/*
-axis_data_fifo_1 fifo_adc_data_small (
-  .s_axis_aresetn(rst_sys),  // input wire s_axis_aresetn
-  .m_axis_aclk(clk_dma),        // input wire m_axis_aclk
-  .s_axis_aclk(clk_ser),        // input wire s_axis_aclk
-  
-  .s_axis_tvalid(valid_to_fifo_d),    // input wire s_axis_tvalid
-  .s_axis_tready(s_axis_tready),    // output wire s_axis_tready
-  .s_axis_tdata(data_to_fifo),      // input wire [63 : 0] s_axis_tdata
-  
-  .m_axis_tvalid(m_axis_tvalid_o),    // output wire m_axis_tvalid
-  .m_axis_tready(m_axis_tready_i),    // input wire m_axis_tready
-  .m_axis_tdata(m_axis_tdata),      // output wire [63 : 0] m_axis_tdata
-  
-  .almost_empty(fifo_empty),      // output wire almost_empty
-  .prog_empty(axis_prog_empty),          // output wire prog_empty
-  .almost_full(fifo_full),        // output wire almost_full
-  .prog_full(axis_prog_full)            // output wire prog_full
-);
-*/
+
 assign m_axis_tstrb = 1;
 assign m_axis_tkeep = 'hFFFF;
-/*
-ila_2 master_axi_probes (
-	.clk(clk_dma), // input wire clk
-	.probe0(m_axis_tdata[63:0]), // input wire [63:0]  probe0  
-	.probe1(m_axis_tready), // input wire [0:0]  probe1 
-	.probe2(fir_m_tvalid), // input wire [0:0]  probe2 
-	.probe3(m_axis_tlast), // input wire [0:0]  probe3 
-	.probe4(axis_prog_full), // input wire [0:0]  probe4 
-	.probe5(axis_prog_empty), // input wire [0:0]  probe5 
-	.probe6(tlast_cnt), // input wire [15:0]  probe6
-    .probe7(m_axis_tvalid_o), // input wire [0:0]  probe7 
-	.probe8(m_axis_tready_i), // input wire [0:0]  probe8
-	.probe9(framer_tlast), // input wire [15:0]  probe9
-	.probe10(fifo_s_tlast), // input wire [0:0]  probe10
-	.probe11(clk_ser), // input wire [0:0]  probe11
-	.probe12(sin),
-	.probe13(cos),
-	.probe14(axis_rd_data_coun)
-);*/
+
 
 ila_4 def_test (
     .clk(clk_dma),
-	.probe0(data_from_fir[0]), // input wire [63:0]  probe0  
-	.probe1(data_from_fir[1]), // input wire [0:0]  probe1 
-	.probe2(data_from_fir[2]),
-	.probe3(data_from_fir[3]),
-	.probe4(data_to_fifo[15:0]),
-	.probe5(data_to_fifo[31:16]),
-	.probe6(data_to_fifo[47:32]),
-	.probe7(data_to_fifo[63:48])
+	.probe0(m_axis_tdata), // input wire [63:0]  probe0  
+	.probe1(counter), // input wire [0:0]  probe1 
+	.probe2(m_axis_tdata_128),
+	.probe3(fifo_m_tlast),
+	.probe4(axis_prog_full)
 );
 
-
-//// FIFO INPUT DATA
-//ila_1 ila_fifo_out_inst (
-//	.clk(clk_ser), // input wire clk
-
-
-//	.probe0(data_to_fifo[63:0]), // input wire [63:0]  probe0  
-//	.probe1(s_axis_tready), // input wire [0:0]  probe1 
-//	.probe2(fifo_wrt), // input wire [0:0]  probe2 
-//	.probe3(valid_to_fifo_d), // input wire [0:0]  probe3 
-//	.probe4(fifo_full), // input wire [0:0]  probe4 
-//	.probe5(fifo_empty), // input wire [0:0]  probe5 
-//	.probe6(1'b0), // input wire [0:0]  probe6 
-//	.probe7(1'b0), // input wire [0:0]  probe7 
-//	.probe8(1'b0), // input wire [15:0]  probe8
-//	.probe9(1'b0), // input wire [0:0]  probe9
-//	.probe10(64'h0000_0000_0000_0000) // input wire [63:0]  probe10
-//);
-
-
-// FIFO OUT DATA
-//ila_1 ila_fifo_out_inst (
-//	.clk(clk_dma), // input wire clk
-
-
-//	.probe0(s_axis_tlast), // input wire [0:0] probe0  
-//	.probe1(m_axis_tdata), // input wire [63:0]  probe1 
-//	.probe2(m_axis_tready), // input wire [7:0]  probe2 
-//	.probe3(m_axis_tvalid), // input wire [0:0]  probe3 
-//	.probe4(m_axis_tlast), // input wire [0:0]  probe4 
-//	.probe5(s_axis_tready), // input wire [0:0]  probe5 
-//	.probe6('h00), // input wire [7:0]  probe6 
-//	.probe7(axis_prog_full), // input wire [0:0]  probe7  
-//	.probe8(axis_prog_empty) // input wire [0:0]  probe8
-//);
-
-//    assign m_axis_tlast = 0;
 
 
 endmodule

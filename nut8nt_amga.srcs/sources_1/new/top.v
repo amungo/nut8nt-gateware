@@ -109,7 +109,7 @@ wire spi0_sclk, spi1_sclk;
 wire spi0_ss0, spi0_ss1, spi0_ss2, spi1_ss0, spi1_ss1, spi1_ss2;
 
 wire rst_sys;
-wire [127:0] s_axis_s2mm_tdata_0;
+wire [31:0] s_axis_s2mm_tdata_0;
 wire [3:0]s_axis_s2mm_tkeep_0;
 wire s_axis_s2mm_tlast_0;
 wire s_axis_s2mm_tready_0;
@@ -257,14 +257,6 @@ dds_compiler_0 your_instance_name (
 assign gen_sin_tdata_short = gen_sin_tdata[11:0];
 assign tx_data = gen_sin_tdata_short;
 assign tx_frame = gen_tvalid;
-
-ila_3 gen_ila_test (
-	.clk(clk_125mhz), // input wire clk
-
-	.probe0(gen_sin_tdata), // input wire [15:0]  probe0  
-	.probe1(gen_sin_tdata_short), // input wire [11:0]  probe1 
-	.probe2(gen_tvalid) // input wire [0:0]  probe2
-);
 
 ads5292_interface #
 (   .WIRE_NUM (2),
