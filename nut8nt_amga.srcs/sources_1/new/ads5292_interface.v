@@ -539,6 +539,8 @@ always @(posedge clk_ser)
     );
     
     // CONCATENATE DATA FROM ALIGNERS
+    
+    
     always @(posedge clk_ser) begin
         for (ch_index = 0; ch_index < CH_NUM; ch_index = ch_index + 1) begin
             data_ads_to_fifo[ch_index] <=  {data_aligned[ch_index+8],data_aligned[ch_index]};
@@ -546,7 +548,7 @@ always @(posedge clk_ser)
         end
         
         if (fir_m_tvalid & s_axis_tready) begin
-            if (fifo_tlast_counter == ('d2048-1)) begin
+            if (fifo_tlast_counter == ('d4096-1)) begin
                 fifo_tlast_counter <= 0;
                 fifo_s_tlast <= 1;
             end else begin
@@ -589,7 +591,9 @@ always @(posedge clk_ser)
     //assign data_to_fifo = {counter, counter, counter, counter};
     //assign data_to_fifo = {data_to_fifo_ff[127:32], counter};
     //assign data_to_fifo = data_to_fifo_ff;
+    //assign data_to_fifo = {counter, data_from_fir[5][20:5], data_from_fir[4][20:5], data_from_fir[3][20:5], data_from_fir[2][20:5], data_from_fir[1][20:5], data_from_fir[0][20:5]};
     assign data_to_fifo = {data_from_fir[7][20:5], data_from_fir[6][20:5], data_from_fir[5][20:5], data_from_fir[4][20:5], data_from_fir[3][20:5], data_from_fir[2][20:5], data_from_fir[1][20:5], data_from_fir[0][20:5]};
+    //assign data_to_fifo = {data_from_fir[7][15:0], data_from_fir[6][15:0], data_from_fir[5][15:0], data_from_fir[4][15:0], data_from_fir[3][15:0], data_from_fir[2][15:0], data_from_fir[1][15:0], data_from_fir[0][15:0]};
 `else
     assign data_to_fifo = {counter, counter, counter, counter, counter, counter, counter, counter};
 `endif
@@ -851,6 +855,7 @@ ila_2 master_axi_probes (
 	.probe14(axis_rd_data_coun)
 );*/
 
+/*
 ila_4 def_test (
     .clk(clk_dma),
 	.probe0(data_from_fir[0]), // input wire [63:0]  probe0  
@@ -862,7 +867,7 @@ ila_4 def_test (
 	.probe6(data_to_fifo[47:32]),
 	.probe7(data_to_fifo[63:48])
 );
-
+*/
 
 //// FIFO INPUT DATA
 //ila_1 ila_fifo_out_inst (
