@@ -1,0 +1,142 @@
+#-----------------------------------------------------------
+# Vivado v2020.2.2 (64-bit)
+# SW Build 3118627 on Tue Feb  9 05:14:06 MST 2021
+# IP Build 3115676 on Tue Feb  9 10:48:11 MST 2021
+# Start of session at: Wed Apr 20 13:16:11 2022
+# Process ID: 8152
+# Current directory: D:/Workspace/nut8nt_amga_4ch_krio
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12856 D:\Workspace\nut8nt_amga_4ch_krio\nut8nt_amga.xpr
+# Log file: D:/Workspace/nut8nt_amga_4ch_krio/vivado.log
+# Journal file: D:/Workspace/nut8nt_amga_4ch_krio\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.xpr
+update_compile_order -fileset sources_1
+open_bd_design {D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets axis_data_fifo_1_prog_full] [get_bd_nets axis_data_fifo_0_prog_full] [get_bd_cells system_ila_0]
+delete_bd_objs [get_bd_nets axi_dma_2_s2mm_introut] [get_bd_intf_nets ps8_0_axi_periph_M03_AXI] [get_bd_intf_nets axi_dma_2_M_AXI_SG] [get_bd_intf_nets axi_dma_2_M_AXI_S2MM] [get_bd_intf_nets axis_data_fifo_2_M_AXIS] [get_bd_cells axi_dma_2]
+delete_bd_objs [get_bd_intf_nets gen_tlast_0_m_axis] [get_bd_cells axis_data_fifo_2]
+delete_bd_objs [get_bd_intf_nets axis_data_fifo_0_M_AXIS] [get_bd_intf_nets axis_data_fifo_1_M_AXIS] [get_bd_cells COMP]
+delete_bd_objs [get_bd_intf_nets axi_dma_3_M_AXIS_MM2S] [get_bd_cells axis_data_fifo_1]
+delete_bd_objs [get_bd_intf_nets axi_dma_1_M_AXIS_MM2S] [get_bd_cells axis_data_fifo_0]
+delete_bd_objs [get_bd_nets axi_dma_1_mm2s_introut] [get_bd_intf_nets ps8_0_axi_periph_M02_AXI] [get_bd_intf_nets axi_dma_1_M_AXI_SG] [get_bd_intf_nets axi_dma_1_M_AXI_MM2S] [get_bd_cells axi_dma_1]
+delete_bd_objs [get_bd_nets axi_dma_3_mm2s_introut] [get_bd_intf_nets ps8_0_axi_periph_M04_AXI] [get_bd_intf_nets axi_dma_3_M_AXI_SG] [get_bd_intf_nets axi_dma_3_M_AXI_MM2S] [get_bd_cells axi_dma_3]
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.NUM_PORTS {1}] [get_bd_cells xlconcat_0]
+endgroup
+validate_bd_design
+update_compile_order -fileset sources_1
+open_bd_design {D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/bd/secondary_proc/secondary_proc.bd}
+delete_bd_objs [get_bd_intf_nets fir_double_0_m2_axis_o] [get_bd_intf_nets PART_MUL_M_AXIS] [get_bd_nets counter_mux_1] [get_bd_nets PART_MUL_prog_full] [get_bd_cells PART_MUL]
+delete_bd_objs [get_bd_intf_nets fifo_fir_M_AXIS] [get_bd_intf_nets fifo_DMA_M_AXIS] [get_bd_nets proc_sys_reset_2_peripheral_aresetn] [get_bd_nets FIR_PART_prog_full] [get_bd_cells General]
+delete_bd_objs [get_bd_nets FIR_PART/setting4_bus_0_1] [get_bd_nets FIR_PART/setting5_bus_1] [get_bd_nets FIR_PART/fir_double_0_fir_valid] [get_bd_intf_nets FIR_PART/fir_double_0_m1_axis_o] [get_bd_intf_nets FIR_PART/fir_double_0_m2_axis_o] [get_bd_intf_nets FIR_PART/gen_tlast_0_m_axis] [get_bd_cells FIR_PART/fir_double_0]
+delete_bd_objs [get_bd_nets fir_double_0_fir_valid] [get_bd_pins FIR_PART/fir_valid]
+delete_bd_objs [get_bd_intf_pins FIR_PART/m2_axis_o]
+connect_bd_intf_net [get_bd_intf_pins FIR_PART/gen_tlast_0/m_axis] [get_bd_intf_pins FIR_PART/fifo_fir/S_AXIS]
+regenerate_bd_layout -hierarchy [get_bd_cells FIR_PART]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets setting4_bus_0_1] [get_bd_pins FIR_PART/setting4_bus]
+delete_bd_objs [get_bd_nets setting5_bus_1] [get_bd_pins FIR_PART/setting5_bus]
+startgroup
+set_property -dict [list CONFIG.Coefficient_File {D:/Workspace/nut8nt_amga_4ch_krio/80to5.coe} CONFIG.Decimation_Rate {16} CONFIG.Coefficient_Sets {1} CONFIG.Number_Channels {1} CONFIG.Sample_Frequency {80} CONFIG.Clock_Frequency {80} CONFIG.Coefficient_Sign {Signed} CONFIG.Quantization {Integer_Coefficients} CONFIG.Coefficient_Width {25} CONFIG.Coefficient_Fractional_Bits {0} CONFIG.Coefficient_Structure {Inferred} CONFIG.Data_Width {24} CONFIG.Output_Width {24} CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} CONFIG.ColumnConfig {3}] [get_bd_cells FIR_PART/fir_compiler_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_ports M_AXIS_MUL16_128] -boundary_type upper [get_bd_intf_pins FIR_PART/M_AXIS]
+regenerate_bd_layout
+current_bd_design [get_bd_designs design_1]
+save_bd_design
+current_bd_design [get_bd_designs secondary_proc]
+save_bd_design
+reset_run synth_1
+reset_run design_1_zynq_ultra_ps_e_0_0_synth_1
+reset_run secondary_proc_fir_compiler_0_0_synth_1
+reset_run design_1_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/imports/new/filtrV.v] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/imports/new/filtrV.v
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/mul.v] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/mul.v
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/mul.v
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/stm_axi_test.v] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/stm_axi_test.v
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/stm_axi_test.v
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/multyplex.v] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/multyplex.v
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/multyplex.v
+export_ip_user_files -of_objects  [get_files D:/../2.5Mhz/nut8nt_amga_8chs_VIKTOR_SHEET_not_work/80to2.5_2.coe] -no_script -reset -force -quiet
+remove_files  D:/../2.5Mhz/nut8nt_amga_8chs_VIKTOR_SHEET_not_work/80to2.5_2.coe
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/2.5Mhz/nut8nt_amga_8chs_VIKTOR_SHEET_not_work/80to2.5_2.coe] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/2.5Mhz/nut8nt_amga_8chs_VIKTOR_SHEET_not_work/80to2.5_2.coe
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/fir_double.v] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/fir_double.v
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/fir_double.v
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/amungo_mul_inst.sv] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/amungo_mul_inst.sv
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/new/amungo_mul_inst.sv
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_0/c_addsub_0.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_0/c_addsub_0.xci
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_1/c_addsub_1.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_1/c_addsub_1.xci
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_2/c_addsub_2.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_2/c_addsub_2.xci
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_3/c_addsub_3.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_3/c_addsub_3.xci
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_4/c_addsub_4.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/c_addsub_4/c_addsub_4.xci
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/c_addsub_5/c_addsub_5.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/c_addsub_5/c_addsub_5.xci
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/c_addsub_5
+file delete -force d:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/c_addsub_5
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/mult_gen_1/mult_gen_1.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/mult_gen_1/mult_gen_1.xci
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/mult_gen_1
+file delete -force d:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/ip/mult_gen_1
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/mult_gen_mul/mult_gen_mul.xci] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/mult_gen_mul/mult_gen_mul.xci
+reset_project
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_bd_design {D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+reset_run design_1_auto_pc_0_synth_1
+reset_run design_1_auto_ds_0_synth_1
+reset_run design_1_axi_smc_2_synth_1
+reset_run design_1_axi_dma_0_1_synth_1
+reset_run design_1_axis_subset_converter_1_0_synth_1
+reset_run design_1_auto_ds_1_synth_1
+reset_run design_1_auto_pc_1_synth_1
+delete_bd_objs [get_bd_addr_segs] [get_bd_addr_segs -excluded]
+assign_bd_address
+startgroup
+set_property -dict [list CONFIG.NUM_MI {2}] [get_bd_cells ps8_0_axi_periph]
+endgroup
+startgroup
+set_property -dict [list CONFIG.NUM_SI {2}] [get_bd_cells axi_smc]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+reset_run design_1_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file D:/Workspace/nut8nt_amga_4ch_krio/top.xsa
+reset_project
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/imports/new/Filter.sv] -no_script -reset -force -quiet
+remove_files  D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sources_1/imports/new/Filter.sv
+export_ip_user_files -of_objects  [get_files D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sim_1/new/tb_design.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sim_1/new/tb_design.v
+file delete -force D:/Workspace/nut8nt_amga_4ch_krio/nut8nt_amga.srcs/sim_1/new/tb_design.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+reset_simulation

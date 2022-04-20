@@ -1,0 +1,577 @@
+
+---------------------------------------------------------------
+Generated Attributes set to Default values
+---------------------------------------------------------------
+    //Attributes set to their DEFUALT VALUES
+    //TX_BITSLICE
+    localparam C_TX_DELAY_FORMAT              = "TIME";
+    localparam C_TX_IS_CLK_INVERTED           = 1'b0;
+    localparam C_TX_IS_RST_DLY_INVERTED       = 1'b0;
+    localparam C_TX_IS_RST_INVERTED           = 1'b0;
+    localparam C_TX_NATIVE_ODELAY_BYPASS      = "FALSE";
+
+    //RX_BITSLICE
+    //localparam C_RX_DELAY_FORMAT              = "TIME";
+    localparam C_RX_FIFO_SYNC_MODE            = "FALSE";
+    localparam C_RX_IS_CLK_EXT_INVERTED       = 1'b0;           
+    localparam C_RX_IS_RST_DLY_EXT_INVERTED   = 1'b0;   
+    localparam C_RX_IS_CLK_INVERTED           = 1'b0;                   
+    localparam C_RX_IS_RST_DLY_INVERTED       = 1'b0;           
+    localparam C_RX_IS_RST_INVERTED           = 1'b0;                   
+
+    //RXTX_BITSLICE
+    localparam C_BIDIR_FIFO_SYNC_MODE         = "FALSE";
+    localparam C_BIDIR_RX_DELAY_FORMAT        = "TIME";
+    localparam C_BIDIR_TX_DELAY_FORMAT        = "TIME";
+    localparam C_BIDIR_IS_RX_CLK_INVERTED     = 1'b0;
+    localparam C_BIDIR_IS_RX_RST_DLY_INVERTED = 1'b0;
+    localparam C_BIDIR_IS_RX_RST_INVERTED     = 1'b0;
+    localparam C_BIDIR_IS_TX_CLK_INVERTED     = 1'b0;
+    localparam C_BIDIR_IS_TX_RST_DLY_INVERTED = 1'b0;
+    localparam C_BIDIR_IS_TX_RST_INVERTED     = 1'b0;
+
+    //BITSLICE_CONTROL
+    localparam C_BSC_CTRL_CLK                 = "EXTERNAL";
+    localparam C_BSC_EN_DYN_ODLY_MODE         = "FALSE";
+    localparam C_BSC_IDLY_VT_TRACK            = "TRUE";
+    localparam C_BSC_ODLY_VT_TRACK            = "TRUE";
+    localparam C_BSC_QDLY_VT_TRACK            = "TRUE";
+    localparam C_BSC_READ_IDLE_COUNT          = 6'h00;
+    localparam C_BSC_REFCLK_SRC               = "PLLCLK";
+    localparam C_BSC_ROUNDING_FACTOR          = 16;
+    localparam C_BSC_RXGATE_EXTEND            = "FALSE";
+    localparam C_BSC_RX_GATING                = "DISABLE";
+    localparam C_BSC_SIM_SPEEDUP              = "FAST";
+    localparam C_BSC_SELF_CALIBRATE           = "ENABLE";
+
+    //TX_BITSLICE_TRI
+    localparam C_TX_TRI_DELAY_FORMAT          =  "TIME";
+    localparam C_TX_TRI_INIT                  =  1'b1;
+    localparam C_TX_TRI_IS_CLK_INVERTED       =  1'b0;
+    localparam C_TX_TRI_IS_RST_DLY_INVERTED   =  1'b0;
+    localparam C_TX_TRI_IS_RST_INVERTED       =  1'b0;
+    localparam C_TX_TRI_OUTPUT_PHASE_90       =  "FALSE";
+    localparam C_TX_TRI_NATIVE_ODELAY_BYPASS  =  "FALSE";
+
+
+
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE0
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE1
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE4
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE5
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE6
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE7
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE13
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE14
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE15
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE16
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE19
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE20
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE23
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE24
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA_AND_CLOCK"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE26
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE28
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE29
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE30
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE31
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE32
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE33
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE34
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE35
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE36
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE37
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE39
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE40
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE45
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE46
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE47
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE48
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE49
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+---------------------------------------------------------------
+Generated Attributes  for RX_BITSLICE50
+---------------------------------------------------------------
+           DATA_TYPE            = "DATA"
+           DATA_WIDTH           = 8
+           CASCADE              = "FALSE"
+           DELAY_TYPE           = "VAR_LOAD"
+           DELAY_VALUE          = 000000000000
+           DELAY_VALUE_EXT      = 000000000000
+           REFCLK_FREQUENCY     = 640
+           SIM_DEVICE           = ULTRASCALE_PLUS_ES1
+   	   SIM_VERSION          = 2.0
+
+
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL0
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "FALSE"
+         EN_OTHER_NCLK         = "FALSE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL1
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "TRUE"
+         EN_OTHER_NCLK         = "TRUE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL2
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "ENABLE"
+         EN_OTHER_PCLK         = "FALSE"
+         EN_OTHER_NCLK         = "FALSE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL3
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "TRUE"
+         EN_OTHER_NCLK         = "TRUE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL4
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "ENABLE"
+         EN_CLK_TO_EXT_SOUTH   = "ENABLE"
+         EN_OTHER_PCLK         = "FALSE"
+         EN_OTHER_NCLK         = "FALSE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL5
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "TRUE"
+         EN_OTHER_NCLK         = "TRUE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL6
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "FALSE"
+         EN_OTHER_NCLK         = "FALSE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+---------------------------------------------------------------
+Generated Attributes  for BITSLICE_CTRL7
+---------------------------------------------------------------
+         DIV_MODE              =  DIV4
+         EN_CLK_TO_EXT_NORTH   = "DISABLE"
+         EN_CLK_TO_EXT_SOUTH   = "DISABLE"
+         EN_OTHER_PCLK         = "TRUE"
+         EN_OTHER_NCLK         = "TRUE"
+         INV_RXCLK             = "FALSE"
+         RX_CLK_PHASE_N        = "SHIFT_0"
+         RX_CLK_PHASE_P        = "SHIFT_0"
+         TX_GATING             = "DISABLE"
+         SIM_DEVICE            = ULTRASCALE_PLUS_ES1
+   	 SIM_VERSION           = 2.0
+         SERIAL_MODE           = "FALSE"
+
+

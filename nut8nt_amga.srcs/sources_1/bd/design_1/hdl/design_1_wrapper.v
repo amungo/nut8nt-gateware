@@ -1,8 +1,8 @@
-//Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Thu Oct 22 13:31:34 2020
-//Host        : DESKTOP-UD6FJRU running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2020.2.2 (win64) Build 3118627 Tue Feb  9 05:14:06 MST 2021
+//Date        : Wed Apr 20 14:02:02 2022
+//Host        : DEF_PC running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -34,6 +34,7 @@ module design_1_wrapper
     clk_dma,
     emio_gpio_i_0,
     emio_gpio_o_0,
+    rst_dma,
     rst_sys,
     s_axis_s2mm_tdata_0,
     s_axis_s2mm_tkeep_0,
@@ -74,8 +75,9 @@ module design_1_wrapper
   output [0:0]M_AXI_status_wvalid;
   input VCC;
   output clk_dma;
-  input [93:0]emio_gpio_i_0;
-  output [93:0]emio_gpio_o_0;
+  input [94:0]emio_gpio_i_0;
+  output [94:0]emio_gpio_o_0;
+  output rst_dma;
   output [0:0]rst_sys;
   input [127:0]s_axis_s2mm_tdata_0;
   input [3:0]s_axis_s2mm_tkeep_0;
@@ -117,8 +119,9 @@ module design_1_wrapper
   wire [0:0]M_AXI_status_wvalid;
   wire VCC;
   wire clk_dma;
-  wire [93:0]emio_gpio_i_0;
-  wire [93:0]emio_gpio_o_0;
+  wire [94:0]emio_gpio_i_0;
+  wire [94:0]emio_gpio_o_0;
+  wire rst_dma;
   wire [0:0]rst_sys;
   wire [127:0]s_axis_s2mm_tdata_0;
   wire [3:0]s_axis_s2mm_tkeep_0;
@@ -163,6 +166,7 @@ module design_1_wrapper
         .clk_dma(clk_dma),
         .emio_gpio_i_0(emio_gpio_i_0),
         .emio_gpio_o_0(emio_gpio_o_0),
+        .rst_dma(rst_dma),
         .rst_sys(rst_sys),
         .s_axis_s2mm_tdata_0(s_axis_s2mm_tdata_0),
         .s_axis_s2mm_tkeep_0(s_axis_s2mm_tkeep_0),

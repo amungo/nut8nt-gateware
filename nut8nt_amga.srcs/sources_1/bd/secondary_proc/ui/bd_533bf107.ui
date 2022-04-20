@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-284,-38",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port s1_axis -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
+preplace port s2_axis -pg 1 -lvl 0 -x 0 -y 250 -defaultsOSRD
+preplace port M_AXIS_MUL16_128 -pg 1 -lvl 3 -x 610 -y 250 -defaultsOSRD
+preplace port ps_clk -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace port s_axis_aresetn -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
+preplace portBus probe0 -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace portBus probe1 -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace inst multyplex_0 -pg 1 -lvl 1 -x 190 -y 260 -defaultsOSRD
+preplace inst fifo_DMA -pg 1 -lvl 2 -x 470 -y 260 -defaultsOSRD
+preplace netloc m_axis_aclk_0_1 1 0 2 20 350 340J
+preplace netloc proc_sys_reset_2_peripheral_aresetn 1 0 2 30 360 330J
+preplace netloc fifo_fir_M_AXIS 1 0 1 NJ 250
+preplace netloc multyplex_0_m_axis 1 1 1 N 240
+preplace netloc PART_MUL_M_AXIS 1 0 1 NJ 230
+preplace netloc fifo_DMA_M_AXIS 1 2 1 N 250
+levelinfo -pg 1 0 190 470 610
+pagesize -pg 1 -db -bbox -sgen -150 -10 800 370
+"
+}
+0

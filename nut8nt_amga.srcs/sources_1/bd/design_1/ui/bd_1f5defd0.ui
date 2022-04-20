@@ -1,0 +1,86 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.189961",
+   "Default View_TopLeft":"-237,-784",
+   "ExpandedHierarchyInLayout":"",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port M_AXI_status -pg 1 -lvl 7 -x 2610 -y 230 -defaultsOSRD
+preplace port VCC -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
+preplace port GND -pg 1 -lvl 0 -x -10 -y 40 -defaultsOSRD
+preplace port spi0_sclk -pg 1 -lvl 7 -x 2610 -y 360 -defaultsOSRD
+preplace port spi0_mi -pg 1 -lvl 0 -x -10 -y 980 -defaultsOSRD
+preplace port spi0_mo -pg 1 -lvl 7 -x 2610 -y 380 -defaultsOSRD
+preplace port spi0_ss2 -pg 1 -lvl 7 -x 2610 -y 440 -defaultsOSRD
+preplace port spi0_ss1 -pg 1 -lvl 7 -x 2610 -y 420 -defaultsOSRD
+preplace port spi0_ss0 -pg 1 -lvl 7 -x 2610 -y 400 -defaultsOSRD
+preplace port spi1_mi -pg 1 -lvl 0 -x -10 -y 1000 -defaultsOSRD
+preplace port spi1_sclk -pg 1 -lvl 7 -x 2610 -y 460 -defaultsOSRD
+preplace port spi1_mo -pg 1 -lvl 7 -x 2610 -y 640 -defaultsOSRD
+preplace port spi1_ss1 -pg 1 -lvl 7 -x 2610 -y 680 -defaultsOSRD
+preplace port spi1_ss0 -pg 1 -lvl 7 -x 2610 -y 660 -defaultsOSRD
+preplace port s_axis_s2mm_tlast_0 -pg 1 -lvl 0 -x -10 -y 790 -defaultsOSRD
+preplace port s_axis_s2mm_tready_0 -pg 1 -lvl 7 -x 2610 -y 1010 -defaultsOSRD
+preplace port s_axis_s2mm_tvalid_0 -pg 1 -lvl 0 -x -10 -y 830 -defaultsOSRD
+preplace port spi1_ss2 -pg 1 -lvl 7 -x 2610 -y 700 -defaultsOSRD
+preplace port rst_dma -pg 1 -lvl 7 -x 2610 -y 930 -defaultsOSRD
+preplace port clk_dma -pg 1 -lvl 7 -x 2610 -y 720 -defaultsOSRD
+preplace portBus emio_gpio_o_0 -pg 1 -lvl 7 -x 2610 -y 50 -defaultsOSRD
+preplace portBus rst_sys -pg 1 -lvl 7 -x 2610 -y 740 -defaultsOSRD
+preplace portBus s_axis_s2mm_tkeep_0 -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace portBus s_axis_s2mm_tdata_0 -pg 1 -lvl 0 -x -10 -y 770 -defaultsOSRD
+preplace portBus emio_gpio_i_0 -pg 1 -lvl 0 -x -10 -y 20 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 950 -y 840 -defaultsOSRD
+preplace inst axis_subset_converter_1 -pg 1 -lvl 2 -x 580 -y 810 -defaultsOSRD
+preplace inst ps8_0_axi_periph -pg 1 -lvl 6 -x 2410 -y 220 -defaultsOSRD
+preplace inst zynq_ultra_ps_e_0 -pg 1 -lvl 5 -x 1790 -y 380 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 4 -x 1290 -y 840 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 200 -y 670 -defaultsOSRD
+preplace inst rst_ps8_0_99M -pg 1 -lvl 5 -x 1790 -y 820 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -x 1290 -y 690 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 6 -x 2410 -y 550 -defaultsOSRD
+preplace netloc zynq_ultra_ps_e_0_emio_spi0_sclk_o 1 5 2 2220 400 2560J
+preplace netloc emio_spi0_m_i_0_1 1 0 6 NJ 980 NJ 980 NJ 980 NJ 980 NJ 980 2120
+preplace netloc zynq_ultra_ps_e_0_emio_spi0_m_o 1 5 2 2190 390 2570J
+preplace netloc zynq_ultra_ps_e_0_emio_spi0_ss2_o_n 1 5 2 2160 420 2580J
+preplace netloc zynq_ultra_ps_e_0_emio_spi0_ss1_o_n 1 5 2 2180 410 2590J
+preplace netloc zynq_ultra_ps_e_0_emio_spi0_ss_o_n 1 5 2 2230 40 2580J
+preplace netloc emio_spi1_m_i_0_1 1 0 6 NJ 1000 NJ 1000 NJ 1000 NJ 1000 NJ 1000 2110
+preplace netloc zynq_ultra_ps_e_0_emio_spi1_sclk_o 1 5 2 2210J 440 2560J
+preplace netloc zynq_ultra_ps_e_0_emio_spi1_m_o 1 5 2 2150J 430 2570J
+preplace netloc zynq_ultra_ps_e_0_emio_spi1_ss1_o_n 1 5 2 2140J 680 NJ
+preplace netloc zynq_ultra_ps_e_0_emio_spi1_ss_o_n 1 5 2 2150J 660 NJ
+preplace netloc VCC_1 1 0 6 30J 20 NJ 20 NJ 20 NJ 20 NJ 20 2130
+preplace netloc GND_1 1 0 6 10J 10 NJ 10 NJ 10 NJ 10 NJ 10 2140
+preplace netloc zynq_ultra_ps_e_0_emio_gpio_o 1 5 2 2150J 30 2590J
+preplace netloc zynq_ultra_ps_e_0_pl_resetn0 1 0 6 10 570 NJ 570 NJ 570 NJ 570 1440 700 2100
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 2 5 780 960 NJ 960 NJ 960 2200 740 NJ
+preplace netloc s_axis_s2mm_tdata_0_1 1 0 2 NJ 770 NJ
+preplace netloc s_axis_s2mm_tvalid_0_1 1 0 2 NJ 830 NJ
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 5 380 690 NJ 690 1130 40 NJ 40 2180
+preplace netloc emio_gpio_i_0_1 1 0 6 20J 30 NJ 30 NJ 30 NJ 30 NJ 30 2120
+preplace netloc s_axis_s2mm_tlast_0_1 1 0 2 NJ 790 NJ
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 7 20 850 370 930 770 950 1150 940 1450 60 2170 720 NJ
+preplace netloc zynq_ultra_ps_e_0_emio_spi1_ss2_o_n 1 5 2 2130J 700 NJ
+preplace netloc axis_subset_converter_1_s_axis_tready 1 1 6 390 1010 NJ 1010 NJ 1010 NJ 1010 NJ 1010 NJ
+preplace netloc axi_dma_0_s2mm_prmry_reset_out_n 1 3 4 1120J 930 NJ 930 NJ 930 NJ
+preplace netloc xlconcat_0_dout 1 4 1 1460 440n
+preplace netloc axi_dma_0_s2mm_introut 1 3 1 1140J 690n
+preplace netloc axis_subset_converter_1_M_AXIS 1 2 1 N 810
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM0_FPD 1 5 1 2160 110n
+preplace netloc axi_dma_0_M_AXI_SG 1 3 1 N 810
+preplace netloc axi_smc_M01_AXI 1 4 1 1470 340n
+preplace netloc zynq_ultra_ps_e_0_M_AXI_HPM1_FPD 1 5 1 2200 130n
+preplace netloc ps8_0_axi_periph_M00_AXI 1 2 5 770 50 NJ 50 NJ 50 NJ 50 2560
+preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 N 830
+preplace netloc axi_smc_M00_AXI 1 4 1 1430 320n
+preplace netloc ps8_0_axi_periph_M01_AXI 1 6 1 NJ 230
+levelinfo -pg 1 -10 200 580 950 1290 1790 2410 2610
+pagesize -pg 1 -db -bbox -sgen -250 0 2820 1030
+"
+}
+{
+   "da_axi4_cnt":"30",
+   "da_clkrst_cnt":"14"
+}

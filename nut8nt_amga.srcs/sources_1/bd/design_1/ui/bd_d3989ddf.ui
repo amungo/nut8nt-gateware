@@ -1,0 +1,58 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.532723",
+   "Default View_TopLeft":"708,-210",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port m_axis -pg 1 -lvl 7 -x 2130 -y 430 -defaultsOSRD
+preplace port s2_axis_i -pg 1 -lvl 0 -x -10 -y 690 -defaultsOSRD
+preplace port s1_axis_i -pg 1 -lvl 0 -x -10 -y 670 -defaultsOSRD
+preplace port clk_dma -pg 1 -lvl 0 -x -10 -y 200 -defaultsOSRD
+preplace port rst_sys -pg 1 -lvl 0 -x -10 -y 710 -defaultsOSRD
+preplace port m1_axis_tvalid_o -pg 1 -lvl 7 -x 2130 -y 620 -defaultsOSRD
+preplace portBus div_value -pg 1 -lvl 7 -x 2130 -y 640 -defaultsOSRD
+preplace portBus m1_axis_tdata_o -pg 1 -lvl 7 -x 2130 -y 600 -defaultsOSRD
+preplace inst div_gen_R -pg 1 -lvl 2 -x 480 -y 120 -defaultsOSRD
+preplace inst xlslice_I -pg 1 -lvl 1 -x 120 -y 440 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 5 -x 1530 -y 400 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 5 -x 1530 -y 290 -defaultsOSRD
+preplace inst gen_tlast_0 -pg 1 -lvl 6 -x 1890 -y 440 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 5 -x 1530 -y 180 -defaultsOSRD
+preplace inst div_gen_I -pg 1 -lvl 2 -x 480 -y 420 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 5 -x 1530 -y 510 -defaultsOSRD
+preplace inst xlslice_I_out -pg 1 -lvl 3 -x 830 -y 380 -defaultsOSRD
+preplace inst xlslice_R -pg 1 -lvl 1 -x 120 -y 140 -defaultsOSRD
+preplace inst filtrV_0 -pg 1 -lvl 6 -x 1890 -y 700 -defaultsOSRD
+preplace inst floating_point_0 -pg 1 -lvl 4 -x 1160 -y 170 -defaultsOSRD
+preplace inst xlslice_R_out -pg 1 -lvl 3 -x 830 -y 120 -defaultsOSRD
+preplace inst floating_point_1 -pg 1 -lvl 4 -x 1160 -y 390 -defaultsOSRD
+preplace netloc xlslice_R_Dout 1 1 1 NJ 140
+preplace netloc xlslice_I_Dout 1 1 1 NJ 440
+preplace netloc util_vector_logic_0_Res 1 5 1 1680 400n
+preplace netloc xlconstant_0_dout 1 5 1 1680 290n
+preplace netloc xlconstant_1_dout 1 5 1 NJ 510
+preplace netloc xlconcat_1_dout 1 5 1 1690 180n
+preplace netloc div_gen_I_m_axis_dout_tdata 1 2 1 720 380n
+preplace netloc zynq_ultra_ps_e_0_pl_clk0 1 0 6 NJ 200 230 540 NJ 540 940 560 1380J 580 1690
+preplace netloc filtrV_0_m1_axis_tvalid_o 1 1 6 250 590 NJ 590 NJ 590 NJ 590 NJ 590 2090
+preplace netloc filtrV_0_div_value 1 1 6 240 240 710J 60 NJ 60 NJ 60 NJ 60 2110
+preplace netloc filtrV_0_m1_axis_tdata_o 1 0 7 10 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 2100
+preplace netloc rst_ps8_0_99M_peripheral_aresetn 1 0 6 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 1680
+preplace netloc div_gen_R_m_axis_dout_tvalid 1 2 2 720 180 NJ
+preplace netloc div_gen_R_m_axis_dout_tdata 1 2 1 N 120
+preplace netloc xlslice_R_out_Dout 1 3 1 940J 120n
+preplace netloc floating_point_0_m_axis_result_tvalid 1 4 1 1370 190n
+preplace netloc floating_point_0_m_axis_result_tdata 1 4 1 N 170
+preplace netloc div_gen_I_m_axis_dout_tvalid 1 2 2 N 440 950J
+preplace netloc xlslice_I_out_Dout 1 3 1 NJ 380
+preplace netloc floating_point_1_m_axis_result_tvalid 1 4 1 N 410
+preplace netloc floating_point_1_m_axis_result_tdata 1 4 1 1380 190n
+preplace netloc gen_tlast_0_m_axis 1 6 1 NJ 430
+preplace netloc Conn2 1 0 6 NJ 670 NJ 670 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc Conn1 1 0 6 NJ 690 NJ 690 NJ 690 NJ 690 NJ 690 NJ
+levelinfo -pg 1 -10 120 480 830 1160 1530 1890 2130
+pagesize -pg 1 -db -bbox -sgen -130 0 2350 790
+"
+}
+0

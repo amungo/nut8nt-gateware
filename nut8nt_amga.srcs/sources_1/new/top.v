@@ -12,9 +12,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define WTF_FIX
 
 module top(
-
     input  wire clk125p,
     input  wire clk125n,
     //interface ADS5292
@@ -94,11 +94,15 @@ module top(
 	//
 	//output	pgpi,
 	//output	pgpo,
-	output	txoen
-    
+	output	txoen,
+	
+	// template wire for fix spi
+	output spi_scz_t,
+	output spi_sclk_t,
+	output spi_sdata_t
+	
     );
     
-
 
 wire VCC;
 wire GND;
@@ -117,6 +121,7 @@ wire s_axis_s2mm_tvalid_0;
 wire clk_dma;
 wire sync_start, sync_rst, fifo_write;
 wire [7:0]status_bus;
+wire [7:0]setting_bus;
 
 wire    [31:0]M_AXI_STATREG_araddr;
 wire    M_AXI_STATREG_arready;
@@ -141,10 +146,12 @@ assign GND = 1'b0;
 //    output m5717_din,
 
 assign spi_sclk  = spi1_sclk;   // ADS
+assign spi_sclk_t= spi1_sclk;   // ADS
 assign mspi_clk  = spi1_sclk;   // SYNT MAX
 assign m5717_sclk  = spi1_sclk;   // MAX5717
 
 assign spi_sdata = spi1_mo;
+assign spi_sdata_t = spi1_mo;
 assign mspi_data = spi1_mo;
 assign m5717_din = spi1_mo;
 
@@ -154,11 +161,13 @@ assign gpio5_1 = 0;//clk_125mhz;
 //assign spi_scz  = spi1_ss1;
 //assign mspi_le  = spi1_ss0;
 
-assign spi1_mi = (spi1_ss0 == 1'b0) ? synt_mux : spi_sdout; //
+assign spi1_mi = (spi1_ss0 == 1'b0) ? synt_mux : 1; //
 assign m5717_CSn = spi1_ss2;
 
-assign nt1spi_sclk = spi0_ss0 == 1'b0 ? spi0_sclk : 1'b1;
-assign nt2spi_sclk = spi0_ss1 == 1'b0 ? spi0_sclk : 1'b1;
+//assign nt1spi_sclk = spi0_ss0 == 1'b0 ? spi0_sclk : 1'b1;
+//assign nt2spi_sclk = spi0_ss1 == 1'b0 ? spi0_sclk : 1'b1;
+assign nt2spi_sclk = spi0_sclk;
+assign nt1spi_sclk = spi0_sclk;
 assign spi_clk   = spi0_ss2 == 1'b0 ? spi0_sclk : 1'b1;   // AD
 
 assign nt1spi_csn  = spi0_ss0;
@@ -170,6 +179,7 @@ assign nt2spi_mosi = spi0_mo; //nt2
 assign spi_mosi  = spi0_mo; //AD
 
 assign spi0_mi    = (spi0_ss0 == 1'b0) ? nt1spi_miso : ( (spi0_ss1 == 1'b0) ? nt2spi_miso : spi_miso); 
+//assign spi0_mi    = nt2spi_miso; 
 //assign spi0_mi    =  nt1spi_miso; //work
 //assign dac_sclk = ss12 == 1'b0 ? sclk1 : 1'b1;
 
@@ -180,6 +190,7 @@ assign ads_rst = gpio_o[1];
 assign ads_pwdn = gpio_o[2];
 assign ads_sync = 0;
 assign spi_scz = gpio_o[7];
+assign spi_scz_t = gpio_o[7];
 
 // MAX config
 assign synt_en = gpio_o[3];
@@ -206,7 +217,12 @@ assign m5717_ldac = gpio_o[20];
 
 // STATUS REG
 assign gpio_i[27:20] = status_bus;
-assign gpio_i[93:28] = 0;
+assign setting_bus = gpio_o[35:28];
+assign LED1 = gpio_o[36];
+assign LED2 = gpio_o[37];
+assign LED3 = gpio_o[38];
+assign LED4 = gpio_o[39];
+assign gpio_i[93:36] = 0;
 
 IBUFDS #(
       .DIFF_TERM("FALSE"),       // Differential Termination
@@ -220,6 +236,7 @@ IBUFDS #(
    
    
 // BUF TX FRAME
+/*
 OBUFDS #(
       .IOSTANDARD("DEFAULT"), // Specify the output I/O standard
       .SLEW("SLOW")           // Specify the output slew rate
@@ -228,7 +245,7 @@ OBUFDS #(
       .OB(tx_frame_n),   // Diff_n output (connect directly to top-level port)
       .I(tx_frame)      // Buffer input
    );
-   
+   */
 // BUF TX CLK
 OBUFDS #(
       .IOSTANDARD("DEFAULT"), // Specify the output I/O standard
@@ -249,6 +266,31 @@ dds_compiler_0 your_instance_name (
   .m_axis_data_tdata(gen_sin_tdata)    // output wire [15 : 0] m_axis_data_tdata
 );
 
+//ila_0 tmp_ila (
+//	.clk(clk_125mhz), // input wire clk
+
+
+//	.probe0(gen_tvalid) // input wire [0:0] probe0
+//);
+
+/*
+ila_1 spi_nt_ila (
+	.clk(clk_125mhz), // input wire clk
+
+
+	.probe0(spi0_sclk), // input wire [0:0]  probe0  
+	.probe1(spi0_mo), // input wire [0:0]  probe1 
+	.probe2(spi0_mi), // input wire [0:0]  probe2 
+	.probe3(spi0_ss1), // input wire [0:0]  probe3 
+	.probe4(nt2spi_sclk), // input wire [0:0]  probe4 
+	.probe5(nt2spi_mosi), // input wire [0:0]  probe5 
+	.probe6(nt2spi_miso), // input wire [0:0]  probe6 
+	.probe7(nt2spi_csn), // input wire [0:0]  probe7
+		.probe8(rst_sys), // input wire [0:0]  probe7
+			.probe9(rst_dma) // input wire [0:0]  probe7
+);
+*/
+
 //    output tx_clk_p,
 //    output tx_clk_n,
 //    output tx_frame_p,
@@ -256,15 +298,7 @@ dds_compiler_0 your_instance_name (
 
 assign gen_sin_tdata_short = gen_sin_tdata[11:0];
 assign tx_data = gen_sin_tdata_short;
-assign tx_frame = gen_tvalid;
-
-ila_3 gen_ila_test (
-	.clk(clk_125mhz), // input wire clk
-
-	.probe0(gen_sin_tdata), // input wire [15:0]  probe0  
-	.probe1(gen_sin_tdata_short), // input wire [11:0]  probe1 
-	.probe2(gen_tvalid) // input wire [0:0]  probe2
-);
+//assign tx_frame = gen_tvalid;
 
 ads5292_interface #
 (   .WIRE_NUM (2),
@@ -288,6 +322,7 @@ ads5292_inst(
     .fifo_wrt(fifo_write),
     .clk_riu(clk_125mhz),
     .status_bus(status_bus),
+    .settings_bus(setting_bus),
     .rst_sys(rst_sys),
     .m_axis_tvalid(s_axis_s2mm_tvalid_0),
     .m_axis_tready(s_axis_s2mm_tready_0),
@@ -296,6 +331,7 @@ ads5292_inst(
     .m_axis_tstrb(1'b0),
     .m_axis_tkeep(s_axis_s2mm_tkeep_0),
     .clk_dma(clk_dma),
+    .rst_dma(rst_dma),
     
     .M_AXI_STATREG_araddr(M_AXI_STATREG_araddr),
     .M_AXI_STATREG_arready(M_AXI_STATREG_arready),
@@ -352,6 +388,7 @@ design_1_wrapper design_inst
     .spi1_sclk(spi1_sclk),
     .spi1_ss0(spi1_ss0),
     .spi1_ss1(spi1_ss1),
+    .rst_dma(rst_dma),
     .spi1_ss2(spi1_ss2)
     );
     

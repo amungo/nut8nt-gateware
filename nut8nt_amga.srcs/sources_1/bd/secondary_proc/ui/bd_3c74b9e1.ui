@@ -1,0 +1,57 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Addressing View_Layers":"/proc_sys_reset_1_peripheral_aresetn:false|/proc_sys_reset_0_peripheral_aresetn:false|/PART_MUL/c_counter_binary_0_Q:false|/proc_sys_reset_0_peripheral_reset:false|/ps_rstn_1:false|/m_axis_aclk_0_1:false|/clk_ser_1:false|/clk_wiz_0_clk_out1:false|/PART_MUL/c_counter_binary_1_Q:false|/proc_sys_reset_2_peripheral_aresetn:false|",
+   "Addressing View_ScaleFactor":"1.0",
+   "Addressing View_TopLeft":"-455,-247",
+   "Color Coded_ScaleFactor":"0.503713",
+   "Color Coded_TopLeft":"-177,-171",
+   "Default View_Layers":"/proc_sys_reset_1_peripheral_aresetn:true|/proc_sys_reset_0_peripheral_aresetn:true|/PART_MUL/c_counter_binary_0_Q:true|/proc_sys_reset_0_peripheral_reset:true|/ps_rstn_1:true|/m_axis_aclk_0_1:true|/clk_ser_1:true|/clk_wiz_0_clk_out1:true|/PART_MUL/c_counter_binary_1_Q:true|/proc_sys_reset_2_peripheral_aresetn:true|",
+   "Default View_ScaleFactor":"0.84",
+   "Default View_TopLeft":"-442,0",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeData":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ScaleFactor":"0.491546",
+   "Grouping and No Loops_TopLeft":"-177,-218",
+   "Interfaces View_Layers":"/proc_sys_reset_1_peripheral_aresetn:false|/proc_sys_reset_0_peripheral_aresetn:false|/PART_MUL/c_counter_binary_0_Q:false|/proc_sys_reset_0_peripheral_reset:false|/ps_rstn_1:false|/m_axis_aclk_0_1:false|/clk_ser_1:false|/clk_wiz_0_clk_out1:false|/PART_MUL/c_counter_binary_1_Q:false|/proc_sys_reset_2_peripheral_aresetn:false|",
+   "Interfaces View_ScaleFactor":"0.989465",
+   "Interfaces View_TopLeft":"-176,-175",
+   "No Loops_ScaleFactor":"0.503713",
+   "No Loops_TopLeft":"-177,-216",
+   "Reduced Jogs_Layers":"/proc_sys_reset_1_peripheral_aresetn:true|/proc_sys_reset_0_peripheral_aresetn:true|/PART_MUL/c_counter_binary_0_Q:true|/proc_sys_reset_0_peripheral_reset:true|/ps_rstn_1:true|/m_axis_aclk_0_1:true|/clk_ser_1:true|/clk_wiz_0_clk_out1:true|/PART_MUL/c_counter_binary_1_Q:true|/proc_sys_reset_2_peripheral_aresetn:true|",
+   "Reduced Jogs_ScaleFactor":"0.525387",
+   "Reduced Jogs_TopLeft":"-175,-141",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port M_AXIS_MUL16_128 -pg 1 -lvl 5 -x 1320 -y 290 -defaultsOSRD
+preplace port clk_ser -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port ps_rstn -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port setting4_bus -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace port setting5_bus -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port fir_valid -pg 1 -lvl 5 -x 1320 -y 20 -defaultsOSRD
+preplace port ps_clk -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus data_to_fir -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace portBus run -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace portBus counter_mux -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 480 -y 530 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 200 -y 420 -defaultsOSRD
+preplace inst proc_sys_reset_1 -pg 1 -lvl 3 -x 750 -y 360 -defaultsOSRD
+preplace inst proc_sys_reset_2 -pg 1 -lvl 4 -x 1130 -y 100 -defaultsOSRD
+preplace inst FIR_PART -pg 1 -lvl 4 -x 1130 -y 300 -defaultsOSRD
+preplace netloc clk_ser_1 1 0 4 30 260 380 260 NJ 260 NJ
+preplace netloc ps_rstn_1 1 0 4 20 280 NJ 280 570 80 NJ
+preplace netloc proc_sys_reset_1_peripheral_aresetn 1 3 1 940 320n
+preplace netloc clk_wiz_0_clk_out1 1 2 2 580 460 930J
+preplace netloc proc_sys_reset_0_peripheral_reset 1 1 1 370 420n
+preplace netloc data_to_fir_1 1 0 4 30J 230 NJ 230 NJ 230 930J
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 390 240 NJ 240 NJ
+preplace netloc m_axis_aclk_0_1 1 0 4 NJ 60 NJ 60 NJ 60 950
+preplace netloc run_1 1 0 4 20J 250 NJ 250 NJ 250 920J
+preplace netloc FIR_PART_M_AXIS 1 4 1 N 290
+levelinfo -pg 1 0 200 480 750 1130 1320
+pagesize -pg 1 -db -bbox -sgen -180 0 1510 600
+"
+}
+0

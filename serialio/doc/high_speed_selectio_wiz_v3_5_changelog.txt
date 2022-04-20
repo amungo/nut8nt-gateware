@@ -1,0 +1,205 @@
+2018.3:
+ * Version 3.5
+ * New Feature: Added new column "Delay values" in Pin Planning page to access delays for each pin
+ * New Feature: Added new features "Common Bus Direction" and "Common Signal Type" for each byte group for selecting the repective pin properties easily
+ * Other: Maximum speed limit for UltraScale+ -1 speed grade devices is increased to 1600Mbps
+
+2018.2:
+ * Version 3.4
+ * New Feature: Added new feature "Enable DRP ports of PLL" to bring up the DRP ports of PLL
+ * Feature Enhancement: Async Mode state is changed from Beta to Production
+ * Other: Async Mode data speed is limited to 1300Mbps (max)
+
+2018.1:
+ * Version 3.3
+ * Bug Fix: Modified the reset logic when RIU clock is derived from PLL
+ * Feature Enhancement: Updated support for Async Mode (Beta)
+ * Feature Enhancement: Added PRBS data generators and checkers in example design
+ * Other: Async Mode (Beta) support is enabled for "Rx Only" Bus Direction
+ * Other: Async Mode (Beta) data speed is restricted to 1400Mbps (max)
+ * Other: Moved the PLL LOC constraint from IP XDC to Example XDC
+
+2017.4:
+ * Version 3.2 (Rev. 3)
+ * Bug Fix: Fixed issue in DIFF_TERM selection for LVDS standard
+ * Feature Enhancement: Updated support for Async Mode (Beta)
+ * Other: Async Mode (Beta) support is enabled for "Rx Only" Bus Direction
+
+2017.3:
+ * Version 3.2 (Rev. 2)
+ * Bug Fix: Updated the range of M and D of PLL for Ultrascale+ devices
+ * New Feature: Added option to allow the RXBITSLICE output to user before bitslip begins
+ * New Feature: Added feature to give the recommended set of PLL input frequencies
+ * Other: Added warning in GUI to discourage customers from using Edge Aligned RX designs with non-0 delay_values
+
+2017.2:
+ * Version 3.2 (Rev. 1)
+ * Bug Fix: Removed -name option in XDC constraints
+
+2017.1:
+ * Version 3.2
+ * Port Change: New ports introduced Async Mode support and to enable Multi interface connections
+ * Bug Fix: Fixed issue in example design simulation when Advanced Strobe option is enabled
+ * New Feature: Added 3-state option for Tx pins
+ * New Feature: Added option to generate the required ports to connect multiple interfaces
+ * New Feature: HASH(0x216b6b0)
+ * Feature Enhancement: Updated support for Async Mode (Beta)
+ * Other: For Ultrascale Plus devices, with -2LV speedgrade, the supported data speed is limited to 1400Mbps for Serialization Factor =4
+ * Other: Modified the max DELAY VALUE for Ultrscale Plus devices to 1100ps
+ * Other: Added additional synchronising register to reset input
+ * Other: DELAY VALUE attribute is modified to be 0ps when OUTPUT_PHASE_90 attribute is set to true
+ * Other: TX BITSLICE DELAY VALUE is set to 0ps as default in GUI
+
+2016.4:
+ * Version 3.1
+ * No changes
+
+2016.3:
+ * Version 3.1
+ * Bug Fix: Updated Strobe propagation logic in Advanced Strobe mode
+ * New Feature: Added new options in GUI, PLL phaseshift mode and Enable N-bitslice pins for RX Differential pins Refer to PG-188 for more details
+ * Feature Enhancement: Updated the GUI layout for Ease-Of-Use
+ * Feature Enhancement: Replaced PLL in core/example design radio button with checkbox
+ * Feature Enhancement: Removed timeouts in Reset State-machine, Refer PG-188 for more details
+ * Feature Enhancement: XDC Constraints updated to include PLL LOC when PLL input clock is from fabric
+ * Feature Enhancement: GUI option added to Select-All or Deselect-All pins in a ByteGroup
+ * Feature Enhancement: Removed additional blank lines at the start of generated files
+ * Feature Enhancement: Fine tuned Differential Pre-emphasis and Differential Termination as per IO-Standard selection
+ * Other: Source HDL files are concatenated into a single file to speed up synthesis and simulation. No changes required by the user
+ * Other: Removed Example Design support for Async Mode configuration of IP
+ * Other: Removed UPDATE_MODE parameter from <component name>_high_speed_selectio_wiz_v3_5.v module
+
+2016.2:
+ * Version 3.0
+ * No changes
+
+2016.1:
+ * Version 3.0
+ * Async/None/Fractional Mode for Rx External Clock to Data alignment is marked Beta. These types of applications require specialized extra logic designs to handle data recovery.  For more information see AR 64216
+ * The Bidirectional signaling feature is available to the user as Beta, however there may be modification required depending on the application. Please see AR 64216 for additional details.
+ * Enhanced example design to support mix of pin directions (Tx, Rx and Mix of Tx, Rx)
+ * Re-ordered the bytegroups in Pin Selection tab in accordance with UG 571
+ * Default configuration changed to "Edge DDR" for Rx External Clock to Data
+ * Changes to HDL library management to support Vivado IP simulation library
+ * Ability to select PLL output clock as RIU clock.
+ * User selectable placement of PLL logic in core or example design to enable sharing of PLL between multiple interfaces
+ * Removed PLL CLKFBOUT port selection
+ * Enhanced Rx Alignment through FIFO_RD_EN control logic.
+ * Valid Range of TX Delay Value is modified to 1 - 1250 ps from 0 - 1250 ps
+ * Added user configurable Bitslip Training Pattern
+ * Logic to drive Bitslip port added in IP wrapper. New ports added- start_bitslip, rx_bitslip_sync_done, rxtx_bitslip_sync_done
+ * Attribute Updates, mainly for Tx Data Alignment
+ * Configurable power-on value of Tx Bitslice serial output
+ * Advanced Strobe configuration to enable designs with data strobed using two complementary strobes
+ * Configurable Differential and Single Ended IO Standards and their properties - Pre-Emphasis, Equalization and Termination
+ * Provided user choice to append pin numbers to the configurable signal names
+ * Enhanced the data speed support up to 1600 Mbps for serialization factor 4, for applicable devices
+ * Ability to configure any number of pins as Clock Forward pin
+
+2015.4.2:
+ * Version 2.0
+ * No changes
+
+2015.4.1:
+ * Version 2.0
+ * No changes
+
+2015.4:
+ * Version 2.0
+ * No changes
+
+2015.3:
+ * Version 2.0
+ * Core is re-architected
+ * Enhanced configurability to support mix of pin directions (Tx, Rx, Bidir, Mix of all)
+ * Added user selectable receive clock/strobe to data relationship
+ * Extended FIFO write clock availability to fabric logic
+ * Added user selectable PLL input clock options based on the line speed
+ * Enhanced pin planning with exhaustive design rule check to ensure 'correct by construction' wizard
+ * Comprehensive reset sequence to improve reliability
+ * Enhanced the data speed support up to 1300 Mbps for serialization factor 4
+ * Added UltraScale+ device support
+ * High Speed SelectIO Wizard v1.1 offered multiple bitslip choices. Bitslip option is restricted to BITS_PER_SLIP only in High Speed SelectIO Wizard v2.0
+
+2015.2.1:
+ * Version 1.1 (Rev. 3)
+ * No changes
+
+2015.2:
+ * Version 1.1 (Rev. 3)
+ * Conditions for ports appearing in template files are updated in coreinfo.yml
+ * In serial mode SELF_CALIBARATE is Enabled, and delay format is always set to time
+
+2015.1:
+ * Version 1.1 (Rev. 2)
+ * Bidirectional bus support enabled for one interface without example simulation support
+
+2014.4.1:
+ * Version 1.1 (Rev. 1)
+ * No changes
+
+2014.4:
+ * Version 1.1 (Rev. 1)
+ * Tb updates to correct the example instantiation
+ * TX_OUTPUT_PHASE_90 is mapped to RTL
+
+2014.3:
+ * Version 1.1
+ * Bitslip Logic for RX data alignment
+ * MMCM or Global Clock Buffer support for clock input to PLLE3
+ * Updated RIU interface from max 8 to max 4 per interface since one RIU connects to Upper and Lower nibble BITSLICE_CONTROL
+
+2014.2:
+ * Version 1.0 (Rev. 1)
+ * CRTL_CLK INTERNAL defeatured
+
+2014.1:
+ * Version 1.0
+ * Initial release
+ * Internal device family name change, no functional changes
+
+(c) Copyright 2014 - 2018 Xilinx, Inc. All rights reserved.
+
+This file contains confidential and proprietary information
+of Xilinx, Inc. and is protected under U.S. and
+international copyright and other intellectual property
+laws.
+
+DISCLAIMER
+This disclaimer is not a license and does not grant any
+rights to the materials distributed herewith. Except as
+otherwise provided in a valid license issued to you by
+Xilinx, and to the maximum extent permitted by applicable
+law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+(2) Xilinx shall not be liable (whether in contract or tort,
+including negligence, or under any other theory of
+liability) for any loss or damage of any kind or nature
+related to, arising under or in connection with these
+materials, including for any direct, or any indirect,
+special, incidental, or consequential loss or damage
+(including loss of data, profits, goodwill, or any type of
+loss or damage suffered as a result of any action brought
+by a third party) even if such damage or loss was
+reasonably foreseeable or Xilinx had been advised of the
+possibility of the same.
+
+CRITICAL APPLICATIONS
+Xilinx products are not designed or intended to be fail-
+safe, or for use in any application requiring fail-safe
+performance, such as life-support or safety devices or
+systems, Class III medical devices, nuclear facilities,
+applications related to the deployment of airbags, or any
+other applications that could lead to death, personal
+injury, or severe property or environmental damage
+(individually and collectively, "Critical
+Applications"). Customer assumes the sole risk and
+liability of any use of Xilinx products in Critical
+Applications, subject only to applicable laws and
+regulations governing limitations on product liability.
+
+THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+PART OF THIS FILE AT ALL TIMES.
